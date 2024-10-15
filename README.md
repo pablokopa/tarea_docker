@@ -20,15 +20,20 @@ docker ps -a
 ```
 En mi caso se ha creado con el nombre **'optimistic_engelbart'**.
 ### 3. Crea un contenedor con el nombre 'dam_alp1'. ¿Como puedes acceder a él?
+Se crea un contenedor utilizando **--name** seguido del nombre que le queremos poner.
 ```bash
 docker run -it --name=dam_alp1 alpine /bin/sh
 ```
-Se crea un contenedor utilizando **--name** seguido del nombre que le queremos poner.
+
+- **_-i_**: Permite interactuar con el contenedor
+- **_-t_**: Asigna una terminal al contenedor (es útil cuando queremos interactuar con la shell del contenedor.
 
 Para acceder a él se utiliza:
 ```bash
 docker start -ai dam_alp1
 ```
+- **_-a_**: Permite ver la salida del contenedor directamente en la terminal.
+
 ### 4. Comprueba que ip tiene y si puedes hacer un ping a google.com
 Iniciar el contenedor:
 ```bash
@@ -51,11 +56,15 @@ Crear el contenedor con nombre **dam_alp2**
 ```bash
 docker run -dit --name dam_alp2 alpine
 ```
+- **_-d_**: Ejecuta el contenedor en segundo plano, lo que significa que no se verá la salida directamente en la terminal
+
 Se inician ambos contenedores y se comprueba sus IPs
 Ahora se comprueba el ping entre contenedores utilizando:
 ```bash
 docker exec -it dam_alp1 ping -c 4 172.17.0.2
 ```
+- **_-c 4_**: Envía solo 4 paquetes en lugar de un ping continuo.
+
 Se comprueba utilizando la IP del otro contenedor, es decir, para el caso de dam_alp1 se utilizará la IP de dam_alp2 y viceversa.
 ### 6. Sal del terminal, ¿que ocurrió con el contenedor?
 Se utiliza **exit**, se abre la consola de nuevo, y se comprueban los contenedores.
