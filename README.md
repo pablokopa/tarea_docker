@@ -48,3 +48,14 @@ Se hace la prueba de ping para google.com
 ```bash
 ping google.com
 ```
+### 5. Crea un contenedor con el nombre 'dam_alp2'. ¿Puedes hacer ping entre los contenedores?
+Crear el contenedor con nombre dam_alp2
+```bash
+docker run -dit --name dam_alp2 alpine
+```
+Se inician ambos contenedores y se comprueba sus IPs
+Ahora se comprueba el ping entre contenedores utilizando:
+```bash
+docker exec -it dam_alp1 ping -c 4 172.17.0.2
+```
+Se comprueba utilizando la IP del otro contenedor, es decir, para el caso de dam_alp1 se utilizará la IP de dam_alp2 y viceversa.
