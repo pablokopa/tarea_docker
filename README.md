@@ -59,3 +59,10 @@ Ahora se comprueba el ping entre contenedores utilizando:
 docker exec -it dam_alp1 ping -c 4 172.17.0.2
 ```
 Se comprueba utilizando la IP del otro contenedor, es decir, para el caso de dam_alp1 se utilizará la IP de dam_alp2 y viceversa.
+### 6. Sal del terminal, ¿que ocurrió con el contenedor?
+Se utiliza exit, se abre la consola de nuevo, y se comprueban los contenedores.
+```bash
+exit
+docker ps -a
+```
+En mi caso los contenedores siguen estando Up, según vi lo normal es que se cierren pero por la forma de iniciar los contendores puede ser que no lo hagan.
