@@ -10,7 +10,6 @@ Para comprobar si la imagen está instalada se utiliza:
 ```bash
 docker images
 ```
-
 ### 2. Crea un contenedor sin ponerle nombre. ¿está arrancado? Obtén el nombre
 ```bash
 docker run alpine
@@ -20,7 +19,6 @@ Si, está arrancado. Para obtener el nombre se utiliza:
 docker ps -a
 ```
 En mi caso se ha creado con el nombre **'optimistic_engelbart'**.
-
 ### 3. Crea un contenedor con el nombre 'dam_alp1'. ¿Como puedes acceder a él?
 ```bash
 docker run -it --name=dam_alp1 alpine /bin/sh
@@ -49,7 +47,7 @@ Se hace la prueba de ping para google.com
 ping google.com
 ```
 ### 5. Crea un contenedor con el nombre 'dam_alp2'. ¿Puedes hacer ping entre los contenedores?
-Crear el contenedor con nombre dam_alp2
+Crear el contenedor con nombre **dam_alp2**
 ```bash
 docker run -dit --name dam_alp2 alpine
 ```
@@ -60,9 +58,15 @@ docker exec -it dam_alp1 ping -c 4 172.17.0.2
 ```
 Se comprueba utilizando la IP del otro contenedor, es decir, para el caso de dam_alp1 se utilizará la IP de dam_alp2 y viceversa.
 ### 6. Sal del terminal, ¿que ocurrió con el contenedor?
-Se utiliza exit, se abre la consola de nuevo, y se comprueban los contenedores.
+Se utiliza **exit**, se abre la consola de nuevo, y se comprueban los contenedores.
 ```bash
 exit
 docker ps -a
 ```
 En mi caso los contenedores siguen estando Up, según vi lo normal es que se cierren pero por la forma de iniciar los contendores puede ser que no lo hagan.
+### 7. ¿Cuanta memoria en el disco duro ocupaste?
+Para comprobar la memoria utilizada se utiliza:
+```bash
+docker system df
+```
+En mi caso he utilizado **7.811MB** en las imagenes, y **206B** para los contenedores.
