@@ -70,3 +70,10 @@ Para comprobar la memoria utilizada se utiliza:
 docker system df
 ```
 En mi caso he utilizado **7.811MB** en las imagenes, y **206B** para los contenedores.
+### 8. ¿Cuanta RAM ocupan los contenedores? ¿Hay algún comando docker para saber esto?.
+Para comprobar la memoria RAM utilizada se utiliza:
+```bash
+docker stats
+```
+Aquí se podrá ver más información relevante además del uso de memoria RAM.
+En mi caso están utilizando **468KiB** y **476KiB** respectivamente.
